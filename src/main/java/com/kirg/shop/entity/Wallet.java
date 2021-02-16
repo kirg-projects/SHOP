@@ -18,7 +18,8 @@ public class Wallet {
     @Column(name = "id")
     @NotNull
     private long id;
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    @OneToOne(cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH },
+            optional = false)
     @JoinColumn(name = "User_id")
     private User user;
     @Column(name = "Cash")

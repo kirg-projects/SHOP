@@ -25,4 +25,6 @@ public class User {
     private String password;
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, optional = false)
     private Wallet wallet;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, optional = false)
+    private UserData userData;
 }
