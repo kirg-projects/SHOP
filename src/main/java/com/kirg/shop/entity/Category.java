@@ -1,14 +1,12 @@
 package com.kirg.shop.entity;
 
+import com.sun.istack.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Category")
@@ -17,8 +15,10 @@ import javax.persistence.Table;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Category {
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false)
     private long id;
     @Column(name = "Name")
+    @NotNull
     private String name;
 }
