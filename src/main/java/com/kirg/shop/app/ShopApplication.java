@@ -1,4 +1,4 @@
-package com.kirg.shop;
+package com.kirg.shop.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
