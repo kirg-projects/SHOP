@@ -39,7 +39,7 @@ public class UserData {
     @Column(name = "street", length = 20)
     private String street;
     @Column(name = "apartmentNumber", length = 3)
-    private String apartmentNumber;
+    private int apartmentNumber;
     @Column(name = "desription", length = 100)
     private String desription;
     @OneToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},

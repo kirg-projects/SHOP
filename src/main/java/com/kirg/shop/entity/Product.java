@@ -31,17 +31,17 @@ public class Product {
 
     @NotNull
     @NumberFormat
-    @Column(name = "Price",precision = 4, scale = 2)
+    @Column(name = "Price", precision = 4, scale = 2)
     private BigDecimal price;
 
     @DateTimeFormat
     @CreationTimestamp
     @Column(name = "Added", updatable = false)
-    private final Timestamp added ;
+    private final Timestamp added;
 
     @NotNull
     @Column(name = "Amount")
-    private Integer Amount;
+    private Integer amount;
 
     //Description is nullable
     @Column(name = "Description")
@@ -57,11 +57,6 @@ public class Product {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "Seller")
-    private User user;
-
-    public Product(Timestamp added) {
-        this.added = added;
-    }
-
+    private User seller;
 
 }
