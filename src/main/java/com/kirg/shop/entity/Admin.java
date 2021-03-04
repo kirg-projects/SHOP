@@ -15,10 +15,9 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Admin {
     @Id
-    @NotNull
-    @Column(name = "id")
+    @Column(name = "id", updatable = false)
     private long id;
-    @OneToOne(cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
+    @OneToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, optional = false)
     @JoinColumn(name = "User_id")
     private User user;
 }
